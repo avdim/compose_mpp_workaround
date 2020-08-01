@@ -1,5 +1,5 @@
 # build JetPack Compose + Kotlin MPP
-## Use my workaround
+## Use workaround
 Look at lib-compose/build.gradle.kts:
 ```Kotlin
 plugins {
