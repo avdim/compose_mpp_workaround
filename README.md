@@ -21,7 +21,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 Install apk from dir: ```app/build/outputs/apk/debug/app-debug.apk```
 
 ## Additional info for JetBrains Kotlin Team and Google Android Team:
-Sorry for: currently at Russian language, later will translate to EN.  
+Sorry for Russian language, later will translate to EN.  
 Есть известный баг @Composable функции не работают с Kotlin Multiplatform ```id("org.jetbrains.kotlin.multiplatform")```  
 Баг заведён в JetBrains YouTrack: https://youtrack.jetbrains.com/issue/KT-38694  
 И в Google IssueTracker: https://issuetracker.google.com/issues/155536223  
