@@ -1,4 +1,4 @@
-#build JetPack Compose + Kotlin MPP
+# build JetPack Compose + Kotlin MPP
 ## Use my workaround
 Look at lib-compose/build.gradle.kts:
 ```Kotlin
@@ -38,7 +38,7 @@ Sorry for: currently at Russian language, later will translate to EN.
 Один из авторов этого кода - Nikolay Igotti. Возможно он сможет помочь с решением этой задачи.  
   
   
-###P.S.
+### P.S.
 Thanks to Google and JetBrains for amazing JetPack Compose and Kotlin Multiplatform.  
 Together we can make these tools even better.  
   
