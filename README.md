@@ -7,16 +7,32 @@ plugins {
     kotlin("multiplatform")
 }
 //...
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    //todo Workaround here:
-    val composeCompilerJar =
-        file("compose-compiler-0.1.0-dev15.jar").absolutePath //need download jar
-    kotlinOptions.freeCompilerArgs += listOf("-Xuse-ir", "-Xplugin=$composeCompilerJar")
+//todo Workaround here:
+configurations {
+    create("composeCompiler") {
+        isCanBeConsumed = false
+    }
+}
+dependencies {
+    "composeCompiler"("androidx.compose:compose-compiler:$ANDROID_COMPOSE_VERSION")
+}
+android {
+    afterEvaluate {
+        val composeCompilerJar =
+            configurations["composeCompiler"]
+                .resolve()
+                .singleOrNull()
+                ?: error("Please add \"androidx.compose:compose-compiler\" (and only that) as a \"composeCompiler\" dependency")
+        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+            kotlinOptions.freeCompilerArgs += listOf("-Xuse-ir", "-Xplugin=$composeCompilerJar")
+        }
+    }
 }
 ```
 ## Build this sample .apk
 ```bash
 ./gradlew assembleDebug
+temporarily MPP works better on version Android Studio 4.2 Canary-6
 ```
 Install apk from dir: ```app/build/outputs/apk/debug/app-debug.apk```
 
