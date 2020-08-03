@@ -1,3 +1,5 @@
+import kotlin.text.capitalize
+
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
@@ -25,12 +27,15 @@ android {
         kotlinCompilerVersion = ANDROID_KOTLIN_COMPILER_VERSION
         kotlinCompilerExtensionVersion = ANDROID_COMPOSE_VERSION
     }
+    sourceSets.configureEach {
+        val root = "src/android${name.capitalize()}"
+        setRoot(root)
+        java.srcDirs("$root/kotlin")
+    }
 }
 
 kotlin {
-    android {
-
-    }
+    android()
     sourceSets {
         val androidMain by getting {
             dependencies {
