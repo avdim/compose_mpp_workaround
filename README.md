@@ -42,4 +42,5 @@ Sorry for Russian language, later will translate to EN.
 Thanks to Google and JetBrains for amazing JetPack Compose and Kotlin Multiplatform.  
 Together we can make these tools even better.  
   
+Thanks to github.com/r4zzz4k fot help  
   
