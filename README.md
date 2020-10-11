@@ -14,7 +14,7 @@ configurations {
     }
 }
 dependencies {
-    "composeCompiler"("androidx.compose:compose-compiler:$ANDROID_COMPOSE_VERSION")
+    "composeCompiler"("androidx.compose.compiler:compiler:$ANDROID_COMPOSE_VERSION")
 }
 android {
     afterEvaluate {
