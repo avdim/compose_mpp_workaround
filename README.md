@@ -1,6 +1,6 @@
 ### On latest version's of JetPack Compose this problem solved. For code sample you may look at https://github.com/JetBrains/compose-jb
 
-# build JetPack Compose + Kotlin MPP
+# build JetPack Compose + Kotlin MPP on Kotlin 1.4.*
 ## Use workaround
 Look at lib-compose/build.gradle.kts:
 ```Kotlin
