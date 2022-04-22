@@ -16,7 +16,8 @@ configurations {
     }
 }
 dependencies {
-    "composeCompiler"("androidx.compose:compose-compiler:$ANDROID_COMPOSE_VERSION")
+    //for older versions "composeCompiler"("androidx.compose:compose-compiler:$ANDROID_COMPOSE_VERSION")
+    "composeCompiler"("androidx.compose.compiler:compiler:$ANDROID_COMPOSE_VERSION")
 }
 android {
     afterEvaluate {
@@ -24,7 +25,7 @@ android {
             configurations["composeCompiler"]
                 .resolve()
                 .singleOrNull()
-                ?: error("Please add \"androidx.compose:compose-compiler\" (and only that) as a \"composeCompiler\" dependency")
+                ?: error("Please add \"androidx.compose.compiler:compiler\" (and only that) as a \"composeCompiler\" dependency")
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
             kotlinOptions.freeCompilerArgs += listOf("-Xuse-ir", "-Xplugin=$composeCompilerJar")
         }
